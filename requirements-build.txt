@@ -1,0 +1,40 @@
+# Build-time dependencies for CardanoSigner
+# These are required to build the package from source
+# Install with: pip install -r requirements-build.txt
+
+# Python build tools
+setuptools>=65.0.0
+wheel>=0.37.0
+Cython>=0.29.0  # often needed for C extensions
+
+# SWIG Python bindings (if not system-installed)
+# Note: SWIG is typically installed system-wide via package manager
+# On macOS: brew install swig
+# On Ubuntu: sudo apt-get install swig
+# On CentOS: sudo yum install swig
+
+# Build dependencies for C/C++ compilation
+# Note: These are Python packages, system dependencies are listed below
+cffi>=1.15.0
+pycparser>=2.21
+
+# System dependencies (install via package manager):
+# 
+# Rust toolchain:
+#   - Install via: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+#   - Or via: brew install rust (macOS)
+#
+# SWIG:
+#   - macOS: brew install swig
+#   - Ubuntu/Debian: sudo apt-get install swig
+#   - CentOS/RHEL: sudo yum install swig
+#   - Arch: sudo pacman -S swig
+#
+# C++ compiler:
+#   - macOS: xcode-select --install
+#   - Ubuntu: sudo apt-get install build-essential
+#   - CentOS: sudo yum groupinstall "Development Tools"
+#
+# Additional libraries (if needed):
+#   - Ubuntu: sudo apt-get install libssl-dev pkg-config
+#   - CentOS: sudo yum install openssl-devel pkgconfig 

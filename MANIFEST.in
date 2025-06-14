@@ -1,0 +1,45 @@
+# Include Rust project files (needed for building)
+include Cargo.toml
+include Cargo.lock
+include build.rs
+include requirements.txt
+include requirements-build.txt
+
+# Include all source files from src/
+recursive-include src *.cpp *.h *.i *.rs *.py
+
+# Include Python module files
+include __init__.py
+
+# Include documentation
+include README.md
+include *.md
+
+# Include configuration files
+include setup.py
+include setup.cfg
+
+# Exclude build artifacts and large binaries
+exclude src/*.a
+exclude src/*.so
+exclude src/*.pyd
+exclude src/*.dll
+exclude src/*.dylib
+
+# Exclude development/build directories
+recursive-exclude target *
+recursive-exclude build *
+recursive-exclude dist *
+recursive-exclude .git *
+recursive-exclude .vscode *
+recursive-exclude __pycache__ *
+recursive-exclude *.egg-info *
+
+# Exclude OS files
+exclude .DS_Store
+exclude *.pyc
+exclude *.pyo
+
+# Include SWIG generated files (critical for installation)
+include src/signer_wrap.cxx
+include src/CardanoSigner.py 

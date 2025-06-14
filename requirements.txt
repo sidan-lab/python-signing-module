@@ -1,0 +1,2 @@
+# Runtime dependencies for CardanoSigner
+# This package is primarily a C/C++ extension with minimal Python dependencies
